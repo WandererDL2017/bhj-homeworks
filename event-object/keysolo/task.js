@@ -24,6 +24,30 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
+    const time = document.querySelector('.status__seconds');
+    let symbol = document.querySelectorAll('.symbol');
+    let seconds = symbol.length;
+    
+    setInterval(() => {
+      time.textContent = seconds;
+      if (seconds <= 0) {
+        this.fail();
+        symbol = document.querySelectorAll('.symbol');
+        seconds = symbol.length;
+      } 
+      seconds--;
+    }, 1000);
+      
+    document.body.addEventListener('keyup', (e) =>{
+      let letter = this.currentSymbol.textContent
+      if (e.key.toLowerCase() === letter.toLowerCase()) {
+        this.success();
+        symbol = document.querySelectorAll('.symbol');
+        seconds = symbol.length;
+      } else {
+        this.fail();
+      }
+    }); 
   }
 
   success() {
