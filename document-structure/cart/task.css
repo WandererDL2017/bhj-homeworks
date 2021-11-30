@@ -89,3 +89,18 @@ body {
 .product-shadow {
   position: absolute;
 }
+
+.cart__product-delete {
+  background: red;
+  padding: 10px 20px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart__product-delete:hover {
+  opacity: 0.8;
+}
