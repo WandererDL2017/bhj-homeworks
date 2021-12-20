@@ -11,12 +11,11 @@ const getCookie = (name) => {
 
 window.onload = () => {
     let nameCoockie = getCookie('close'); 
-
+    
     if (nameCoockie === 'modal_close') {
         return;
-    } else {
-        modal.classList.add('modal_active');
-    }
+    } 
+    modal.classList.add('modal_active');
     
     close.addEventListener('click', () => {
         modal.classList.remove('modal_active');
